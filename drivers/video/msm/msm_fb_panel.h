@@ -204,10 +204,12 @@ struct msm_fb_panel_data {
 
 	/* function entry chain */
 	int (*on) (struct platform_device *pdev);
+	int (*controller_on_panel_on) (struct platform_device *pdev);
 	int (*off) (struct platform_device *pdev);
 	int (*late_init) (struct platform_device *pdev);
 	int (*early_off) (struct platform_device *pdev);
 	int (*power_ctrl) (boolean enable);
+	int power_on_panel_at_pan;
 	struct platform_device *next;
 	int (*clk_func) (int enable);
 	struct msm_panel_info *(*panel_detect) (struct msm_fb_data_type *mfd);
