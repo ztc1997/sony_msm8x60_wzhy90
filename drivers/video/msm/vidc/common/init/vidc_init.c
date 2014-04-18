@@ -644,8 +644,7 @@ u32 vidc_insert_addr_table(struct video_client_ctx *client_ctx,
 			*kernel_vaddr = (unsigned long)
 				ion_map_kernel(
 				client_ctx->user_ion_client,
-				buff_ion_handle,
-				ionflag);
+				buff_ion_handle);
 			if (IS_ERR_OR_NULL((void *)*kernel_vaddr)) {
 				ERR("%s():ION virtual addr fail\n",
 				 __func__);
@@ -675,8 +674,7 @@ u32 vidc_insert_addr_table(struct video_client_ctx *client_ctx,
 						length,
 						(unsigned long *) &iova,
 						(unsigned long *) &buffer_size,
-						UNCACHED,
-						ION_IOMMU_UNMAP_DELAYED);
+						0, 0);
 				if (ret) {
 					ERR("%s():ION iommu map fail\n",
 					 __func__);
