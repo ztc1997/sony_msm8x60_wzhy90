@@ -22,7 +22,7 @@
 #include "idle.h"
 #include "idle-macros.S"
 
-#ifdef CONFIG_ARCH_MSM_KRAIT
+#if defined(CONFIG_MSM_SCM) && !defined(CONFIG_ARCH_MSM8X60)
 #define SCM_SVC_BOOT 0x1
 #define SCM_CMD_TERMINATE_PC 0x2
 #endif
@@ -128,7 +128,7 @@ ENTRY(msm_pm_collapse)
 	bne	skip
 	bl	v7_flush_dcache_all
 skip:
-#ifdef CONFIG_ARCH_MSM_KRAIT
+#if defined(CONFIG_MSM_SCM) && !defined(CONFIG_ARCH_MSM8X60)
 	ldr	r0, =SCM_SVC_BOOT
 	ldr	r1, =SCM_CMD_TERMINATE_PC
 	ldr	r2, =msm_pm_flush_l2_flag
