@@ -612,8 +612,6 @@ static int msm_otg_set_power(struct usb_phy *xceiv, unsigned mA)
 	else if (pdata->chg_drawable_ida && test_bit(ID_A, &dev->inputs))
 		charge = pdata->chg_drawable_ida;
 
-	pr_info("Charging with %dmA current\n", charge);
-
 #ifdef CONFIG_FORCE_FAST_CHARGE
 	if (force_fast_charge == 1) {
 		// DooMLoRD: dont override charging current if available current is greater
