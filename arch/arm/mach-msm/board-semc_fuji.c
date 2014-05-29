@@ -2395,7 +2395,7 @@ static struct msm_i2c_ssbi_platform_data msm_ssbi3_pdata = {
 #define MSM_FB_SIZE roundup(MSM_FB_PRIM_BUF_SIZE + MSM_FB_EXT_BUF_SIZE + \
 				MSM_FB_DSUB_PMEM_ADDER, 4096)
 
-#define MSM_PMEM_SF_SIZE 0x6E00000 /* 110 Mbytes */
+#define MSM_PMEM_SF_SIZE 0x5000000 /* 80 Mbytes */
 #define MSM_HDMI_PRIM_PMEM_SF_SIZE 0x8000000 /* 128 Mbytes */
 
 #ifdef CONFIG_FB_MSM_HDMI_AS_PRIMARY
@@ -2417,7 +2417,7 @@ unsigned char hdmi_is_primary;
 #endif  /* CONFIG_FB_MSM_OVERLAY1_WRITEBACK */
 
 #define MSM_PMEM_KERNEL_EBI1_SIZE  0x3BC000
-#define MSM_PMEM_ADSP_SIZE         0x4200000
+#define MSM_PMEM_ADSP_SIZE         0x4000000
 #define MSM_PMEM_CAMERA_SIZE       0x5000000
 #define MSM_PMEM_AUDIO_SIZE        0x4CF000
 #define MSM_PMEM_SWIQI_SIZE        0x2000000
@@ -2459,11 +2459,11 @@ unsigned char hdmi_is_primary;
 #define SECURE_SIZE	(MSM_ION_MM_SIZE + MSM_MM_FW_SIZE)
 #endif
 
-//#define MSM_ION_SF_SIZE                0x7000000 /* 112MB */
-//#define MSM_ION_CAMERA_SIZE     0x5000000 /*80MB*/
+#define MSM_ION_SF_SIZE         0x5300000 /* 83MB */
+#define MSM_ION_CAMERA_SIZE     0x4000000 /*64MB*/
 
-#define MSM_ION_SF_SIZE         0x9000000 /* 112MB -> 144MB */
-#define MSM_ION_CAMERA_SIZE     0x7000000 /* 80MB -> 112MB */
+//#define MSM_ION_SF_SIZE         0x9000000 /* 112MB -> 144MB */
+//#define MSM_ION_CAMERA_SIZE     0x7000000 /* 80MB -> 112MB */
 
 #ifdef CONFIG_FB_MSM_OVERLAY1_WRITEBACK
 #define MSM_ION_WB_SIZE		0xC00000 /* 12MB */
