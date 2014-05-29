@@ -33,6 +33,12 @@ config CPU_FREQ_STAT
 
 	  If in doubt, say N.
 
+config CPU_FREQ_DEFAULT_GOV_LIONHEART
+	bool "lionheart"
+	select CPU_FREQ_GOV_LIONHEART
+	help
+	  Use the CPUFreq governor 'lionheart' as default
+
 config CPU_FREQ_STAT_DETAILS
 	bool "CPU frequency translation statistics details"
 	depends on CPU_FREQ_STAT
@@ -124,6 +130,12 @@ config CPU_FREQ_DEFAULT_GOV_SMARTASS2
 	  Use the CPUFreq governor 'smartassV2' as default.
 
 endchoice
+
+config CPU_FREQ_GOV_LIONHEART
+	tristate "lionheart"
+	depends on CPU_FREQ
+	help
+	  Use the CPUFreq governor 'lionheart' as default.
 
 config CPU_FREQ_GOV_PERFORMANCE
 	tristate "'performance' governor"
