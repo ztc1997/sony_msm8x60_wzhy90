@@ -607,8 +607,6 @@ static ssize_t show_max_freq(struct device *dev, struct device_attribute *attr,
 	return sprintf(buf, "%lu\n", to_devfreq(dev)->max_freq);
 }
 
-<<<<<<< HEAD
-=======
 static ssize_t show_available_freqs(struct device *d,
 				    struct device_attribute *attr,
 				    char *buf)
@@ -665,7 +663,6 @@ static ssize_t show_trans_table(struct device *dev, struct device_attribute *att
 	return len;
 }
 
->>>>>>> d91b216... PM: devfreq: Fix show available freqs
 static struct device_attribute devfreq_attrs[] = {
 	__ATTR(governor, S_IRUGO, show_governor, NULL),
 	__ATTR(cur_freq, S_IRUGO, show_freq, NULL),
